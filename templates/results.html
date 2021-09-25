@@ -12,7 +12,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
 
     <title>Title</title>
 
@@ -20,25 +20,25 @@
 
   <body>
 
-    <div id="particle"></div>
+    <div class="container-fluid" > 
 
-    <div class="container-fluid"> 
+      <div id="roof">
+        <div class="light"><img src="lights.png" /></div>
+      </div>
 
-      <div class="jumbotron" id="jumbo">
+      <div class="painting">
 
-        <div class="inner">
+        <img src="static/images/sample.jpg" class="rounded mx-auto d-block frame" alt="Responsive image">
 
-          <h1 class="whitney">Monetify</h1>
-          <h3 class="gotham">Create art from a photo</h3>
-          <p>Upload a photo below and our algorithm can convert it into Monet's style</p>
-          <p><a class="btn btn-primary btn-lg" role="button">Upload &raquo;</a></p>
-
+        <div class="label">
+          <h1>Generated Title</h1>
+          <p>Generated description for the painting.</p>
         </div>
 
       </div>
 
     </div>
-
+      
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
