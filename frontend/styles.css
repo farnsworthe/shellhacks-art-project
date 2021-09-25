@@ -1,0 +1,31 @@
+#jumbo{
+  background: #fff;
+  color: #000;
+  position: relative;
+  padding: 50px;
+}
+
+.inner{
+  color:#000;
+  opacity: 1;
+}
+
+body{
+  padding-top: 75px;
+}
+
+.card-img-top {
+    width: 80%;
+    height: 45vw;
+    object-fit: cover;
+}
+
+img.frame {
+	border-image: url('frame.png') 93 92 87 92 stretch stretch;
+	border-color: #f4be52;
+	border-style: inset;
+	border-width: 60px;
+	width: 500px;
+	height: 333px;
+	background-color: #ffe;
+}
