@@ -48,7 +48,7 @@ h1 {
 }
 
 img.frame {
-	border-image: url('frame.png') 93 92 87 92 stretch stretch;
+	border-image: url('images/frame.png') 93 92 87 92 stretch stretch;
 	border-color: #f4be52;
 	border-style: inset;
 	border-width: 60px;
