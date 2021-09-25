@@ -1,3 +1,7 @@
+body{
+  padding-top: 75px;
+}
+
 #jumbo{
   background: #fff;
   color: #000;
@@ -8,10 +12,6 @@
 .inner{
   color:#000;
   opacity: 1;
-}
-
-body{
-  padding-top: 75px;
 }
 
 .card-img-top {
