@@ -1,5 +1,21 @@
 body{
-  padding-top: 75px;
+  height: 100vh;
+  margin: auto;
+  color: black;
+  font-size: 12px;
+  background-color: rgb(212, 211, 224);
+}
+
+h1 {
+  color: black;
+  font-size: large;
+  padding: 0 0 15px 0;
+}
+
+.container-fluid {
+  margin: auto;
+  width: 800px;
+  height: 100vh;
 }
 
 #jumbo{
@@ -15,17 +31,38 @@ body{
 }
 
 .card-img-top {
-    width: 80%;
-    height: 45vw;
-    object-fit: cover;
+  width: 80%;
+  height: 45vw;
+  object-fit: cover;
 }
 
+.painting {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.frame {
+  margin: auto;
+  display: block;
+}
 img.frame {
 	border-image: url('frame.png') 93 92 87 92 stretch stretch;
 	border-color: #f4be52;
 	border-style: inset;
 	border-width: 60px;
-	width: 500px;
-	height: 333px;
-	background-color: #ffe;
+	width: 600px;
+}
+
+.label {
+  color: black;
+  font-size: small;
+  font-weight: normal;
+  border: 1px solid rgba(0, 0, 0, 0.473);
+  background-color: #fff;
+  width: 420px;
+  height: 180px;
+  margin: -111px auto auto auto;
+  padding: 30px;
 }
