@@ -1,21 +1,25 @@
 body{
+  width: 100vw;
   height: 100vh;
-  margin: auto;
   color: black;
-  font-size: 12px;
+  font-weight: normal;
   background-color: rgb(212, 211, 224);
 }
 
 h1 {
   color: black;
-  font-size: large;
-  padding: 0 0 15px 0;
+  font-size: 1.5em;
+  padding: 0 0 10px 0;
 }
 
 .container-fluid {
   margin: auto;
   width: 800px;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #jumbo{
@@ -30,11 +34,11 @@ h1 {
   opacity: 1;
 }
 
-.card-img-top {
+/*.card-img-top {
   width: 80%;
   height: 45vw;
   object-fit: cover;
-}
+}*/
 
 .painting {
   height: 100vh;
@@ -43,26 +47,23 @@ h1 {
   justify-content: center;
 }
 
-.frame {
-  margin: auto;
-  display: block;
-}
 img.frame {
 	border-image: url('frame.png') 93 92 87 92 stretch stretch;
 	border-color: #f4be52;
 	border-style: inset;
 	border-width: 60px;
 	width: 600px;
+  margin: 0 auto;
 }
 
 .label {
   color: black;
-  font-size: small;
+  font-size: 1em;
   font-weight: normal;
   border: 1px solid rgba(0, 0, 0, 0.473);
   background-color: #fff;
-  width: 420px;
-  height: 180px;
-  margin: -111px auto auto auto;
-  padding: 30px;
+  width: 333px;
+  height: 150px;
+  margin: 10px auto 0 auto;
+  padding: 25px;
 }
