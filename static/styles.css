@@ -6,7 +6,7 @@ body {
   font-weight: normal;
 }
 h1 {
-  padding: 0 0 10px 0;
+  padding: 0 0 20px 0;
   color: black;
   font-size: 6em;
   font-family: 'Playfair Display', serif;
@@ -38,7 +38,7 @@ input[type="submit"] {
 
 .container-fluid {
   width: 800px;
-  height: 100vh;
+  height: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -46,23 +46,30 @@ input[type="submit"] {
   flex-direction: column;
 }
 #banner {
-  width: 41.3vw;
+  width: 666px;
+  min-height: 60%;
   position: relative;
   padding: 50px;
   background: white;
   text-align: center;
-  box-shadow: 10px 10px #09062e48;
-}
-.inner {
-  height: 500px;
-  background-image: url("images/cover.jfif");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  box-shadow: 10px 10px #09062e48;
+}
+.cover {
+  width: 100%;
+  height: 30vh;
   margin: 30px auto;
-  color: white;
+  position: relative;
+}
+.coverImg {
+  height: 100%;
+  position:relative;
+  background: url("images/cover.jfif") no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* painting start */
