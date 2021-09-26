@@ -146,7 +146,6 @@ def Discriminator():
 
     return tf.keras.Model(inputs=inp, outputs=last)
 
-
 with strategy.scope():
     monet_generator = Generator()  # transforms photos to Monet-esque paintings
     photo_generator = Generator()  # transforms Monet paintings to be more like photos
@@ -164,6 +163,12 @@ with strategy.scope():
     def identity_loss(real_image, same_image, LAMBDA):
         loss = tf.reduce_mean(tf.abs(real_image - same_image))
         return LAMBDA * 0.5 * loss
+    
+    def discriminator_loss(real, generated):
+        real_loss = tf.keras.losses.BinaryCrossentropy(from_logits=True, reduction=tf.keras.losses.Reduction.NONE)(tf.ones_like(real), real)
+        generated_loss = tf.keras.losses.BinaryCrossentropy(from_logits=True, reduction=tf.keras.losses.Reduction.NONE)(tf.zeros_like(generated), generated)
+        total_disc_loss = real_loss + generated_loss
+        return total_disc_loss * 0.5
 
 
 class CycleGan(keras.Model):
@@ -272,16 +277,6 @@ class CycleGan(keras.Model):
             "monet_disc_loss": monet_disc_loss,
             "photo_disc_loss": photo_disc_loss
         }
-
-with strategy.scope():
-    def discriminator_loss(real, generated):
-        real_loss = tf.keras.losses.BinaryCrossentropy(from_logits=True, reduction=tf.keras.losses.Reduction.NONE)(tf.ones_like(real), real)
-
-        generated_loss = tf.keras.losses.BinaryCrossentropy(from_logits=True, reduction=tf.keras.losses.Reduction.NONE)(tf.zeros_like(generated), generated)
-
-        total_disc_loss = real_loss + generated_loss
-
-        return total_disc_loss * 0.5
 
 
 if __name__ == '__main__':
