@@ -12,6 +12,10 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-weight: bold;
 }
+h2 {
+  padding: 0 0 10px 0;
+  font-size: 1.3em;
+}
 input[type="file"] {
   background: transparent;
   box-shadow: none;
@@ -42,7 +46,7 @@ input[type="submit"] {
   flex-direction: column;
 }
 #banner {
-  width: 666px;
+  width: 41.3vw;
   position: relative;
   padding: 50px;
   background: white;
