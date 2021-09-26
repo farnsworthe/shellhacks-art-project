@@ -1,6 +1,7 @@
 from flask import Flask, flash, request, redirect, url_for, render_template
 import urllib.request
 import os
+from gan import generateMonet
 from werkzeug.utils import secure_filename
 
 #from flask import render_template, request, redirect
@@ -15,7 +16,7 @@ app.secret_key = "not-so-secret-key"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -50,10 +51,11 @@ def upload_image():
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #print('upload_image filename: ' + filename)
+        generateMonet(filename)
         return render_template('results.html', filename=filename)
 
     else:
-        flash('Only the following files are allowed: .png, .jpg, .jpeg, .gif')
+        flash('Only the following files are allowed: .png, .jpg, .jpeg')
         return redirect(request.url)
 
 @app.route('/display/<filename>')

@@ -31,7 +31,7 @@ def read_tfrecord(example):
 
 def load_dataset(filenames, labeled=True, ordered=False):
     dataset = tf.data.TFRecordDataset(filenames)
-    dataset = dataset.map(read_tfrecord, num_parallel_calls=AUTOTUNE)
+    dataset = dataset.map(read_tfrecord)
     return dataset
 
 def downsample(filters, size, apply_instancenorm=True):
@@ -170,6 +170,18 @@ with strategy.scope():
         total_disc_loss = real_loss + generated_loss
         return total_disc_loss * 0.5
 
+def generateMonet(img)
+
+    # Convert to Tensor of type float32 for example
+    image_tensor = tf.convert_to_tensor(img, dtype=tf.float32)
+
+    # Add dimension to match with input mode 
+    image_tensor = tf.expand_dims(image_tensor, 0)
+
+    prediction = monet_generator(image_tensor, training=False)[0].numpy()
+    prediction = (prediction * 127.5 + 127.5).astype(np.uint8)
+    im = PIL.Image.fromarray(prediction)
+    im.save("../images/" + str(i) + ".jpg")
 
 class CycleGan(keras.Model):
     def __init__(
@@ -327,4 +339,3 @@ if __name__ == '__main__':
         ax[i, 1].set_title("Monet-esque")
         ax[i, 0].axis("off")
         ax[i, 1].axis("off")
-    plt.show()
